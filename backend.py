@@ -13,8 +13,8 @@ load_dotenv()
 #getting the list of free models available
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
-for model in client.models.list().data:
-    print(model.id)
+# for model in client.models.list().data:
+#     print(model.id)
 
 
 
@@ -51,27 +51,6 @@ graph.add_edge('chat_node',END)
 chatbot = graph.compile(checkpointer=checkpointer)
 
 
-"""initial_state = {
-  'messages':[HumanMessage(content="do we have job openings on Generative AI or Agentic AI for a fresher in India")]
-}
-
-result = chatbot.invoke(initial_state)
-print(result['messages'][-1].content) """
 
 
-
-# #initializing thread (the conversation with same thread comes under same chat)
-# thread_id = 1
- 
-# #making the chatbot work till user wants to stop
-# while True:
-#   user_message = input("Type here: ")
-#   print(user_message)
-#   if user_message.strip().lower() in ['exit','quit','bye']:
-#     break
-#   config = {'configurable':{'thread_id':thread_id}}
-#   response = chatbot.invoke({"messages":[HumanMessage(content=user_message)]}, config=config)
-#   print('AI: ',response['messages'][-1].content)
-
-
-# chatbot.get_state(config=config)
+  
